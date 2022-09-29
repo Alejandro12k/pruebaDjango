@@ -1,0 +1,20 @@
+
+
+<form action="" enctype="multipart/form-data" method="post">
+
+  {% csrf_token %}
+  {% for campo in formulario %}
+    <div class="mb-3">
+      <label for="" class="form-label">{{ campo.label }}</label>
+      <input type="{{ campo.field.widget.input_type}}" name=" 
+      class="form-control" 
+      name="{{ campo.name}}" 
+      id="" 
+      aria-describedby="" 
+      placeholder="{{ campo.label }}">
+    </div>
+    <div class="col-12 help-text"> {{campo.errors}}</div>
+  {% endfor %}
+
+  <input type="submit" class="btn btn-success" value="Enviar informacion">
+</form>
